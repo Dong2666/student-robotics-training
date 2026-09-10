@@ -8,3 +8,15 @@ This repository contains my software engineering training work for the Berkeley 
 - Learn Git workflow
 - Write a small Python utility
 - Practice documentation
+
+## Running the Hello Robot Script
+
+```
+python scripts/hello_robot.py
+```
+
+Expected output:
+
+```
+Hello, Berkeley Humanoid Lite software project!
+```
