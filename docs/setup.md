@@ -1,7 +1,33 @@
 # Development Environment Setup
 
-This document records how the development environment for this
-repository was set up, so that another student could rebuild it.
+## Quick Start (for a new machine)
+
+Requires Python 3.10+ (tested on 3.11.7) and Git.
+
+```
+git clone https://github.com/Dong2666/student-robotics-training.git
+cd student-robotics-training
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python scripts/hello_robot.py
+python scripts/system_info.py --name Student
+```
+
+(In Git Bash use `source .venv/Scripts/activate`; on Linux/macOS use
+`source .venv/bin/activate`.)
+
+Expected result: `hello_robot.py` prints a greeting; `system_info.py`
+prints `Hello Student` plus Python version, operating system, and
+machine architecture.
+
+If GitHub is not directly reachable in your network, see
+"Problems Encountered" below for the proxy configuration fix.
+
+---
+
+This document also records how the original development environment
+was set up, so that another student could rebuild it.
 
 ## Computer
 
