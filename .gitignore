@@ -8,6 +8,11 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
+# colcon / ROS 2 build artifacts
+robot_ws/build/
+robot_ws/install/
+robot_ws/log/
+
 # Generated evidence and logs (keep intentional evidence, not bulk output)
 *.log
 

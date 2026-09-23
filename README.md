@@ -5,19 +5,21 @@ software internship.
 
 ## Purpose
 
-This repository contains my Week 1 engineering training work: environment
-setup, Git/GitHub workflow practice, small Python utilities, and the
-documentation that lets another student reproduce everything here.
-It is written for my mentor and for future students.
+This repository contains my internship training work: engineering
+fundamentals (environment, Git/GitHub workflow, Python utilities) and,
+from Week 2 on, ROS 2 development for the Berkeley Humanoid Lite
+project. It is written for my mentor and for future students.
 
 ## Repository Structure
 
-- `docs/` — documentation: setup guide, project structure, changelog,
+- `docs/` — documentation: setup guides, package structure, changelog,
   and daily reports
+- `robot_ws/` — ROS 2 workspace (`src/student_robotics` package)
 - `scripts/` — small Python utilities
 - `config/` — example configuration files
 - `tests/` — manual test procedures
 - `requirements.txt` — Python dependencies
+- `LICENSE` — MIT
 
 ## Setup
 
@@ -74,16 +76,41 @@ Manual test procedures live in `tests/`:
 - `tests/test_system_info.md` — two manual tests for `system_info.py`
   (basic run, and the missing-argument error case)
 
+## ROS 2 Workspace
+
+Requires ROS 2 Humble on Ubuntu 22.04 — see
+[docs/ros2_setup.md](docs/ros2_setup.md).
+
+```
+cd robot_ws
+colcon build
+source install/setup.bash
+ros2 run student_robotics hello_node
+```
+
+Expected output (the node idles until interrupted):
+
+```
+[INFO] [...] [hello_node]: student_robotics hello node started
+```
+
+Package file roles and the build-to-run chain are explained in
+[docs/ros2_package_structure.md](docs/ros2_package_structure.md).
+
 ## Current Status
 
-Week 1 (in progress):
+Week 1 — complete (environment, Git/PR workflow, Python utilities,
+documentation; weekly report in `docs/weekly_report.md`).
 
-- [x] Day 1 — environment setup, repository creation
-- [x] Day 2 — Git branch/PR workflow (`hello_robot.py`, PR #1 merged)
-- [x] Day 3 — `system_info.py` with argparse/logging (PR #2 merged)
-- [x] Day 4 — documentation pass
-- [ ] Day 5 — weekly report and demo
+Week 2 (ROS 2):
+
+- [x] M2.1 — Week 1 release + clean-clone verification (PR #4)
+- [x] M2.2 — ROS 2 Humble installed and verified (talker/listener,
+      workspace, setup docs)
+- [x] M2.3 — first ROS 2 package `student_robotics` with `hello_node`
+- [ ] M2.4 — publisher/subscriber communication
+- [ ] M2.5 — reusable onboarding example
 
 ## Next Steps
 
-Finish the weekly report and demo. Week 2 will introduce ROS 2.
+Publisher/subscriber nodes inside `student_robotics` (M2.4).
