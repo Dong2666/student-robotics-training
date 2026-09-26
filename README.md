@@ -97,6 +97,27 @@ Expected output (the node idles until interrupted):
 Package file roles and the build-to-run chain are explained in
 [docs/ros2_package_structure.md](docs/ros2_package_structure.md).
 
+### Publisher / Subscriber
+
+Two terminals (each sourced as above):
+
+```bash
+# Terminal 1
+ros2 run student_robotics status_publisher
+# Terminal 2
+ros2 run student_robotics status_subscriber
+```
+
+The publisher sends `status <n> uptime=<s>` on `/status` at 1 Hz; the
+subscriber logs each message. Verify independently:
+
+```bash
+ros2 topic hz /status      # average rate ~1.0
+ros2 topic echo /status    # message content
+```
+
+Manual test procedures: [docs/ros2_communication_tests.md](docs/ros2_communication_tests.md).
+
 ## Current Status
 
 Week 1 — complete (environment, Git/PR workflow, Python utilities,
@@ -108,9 +129,10 @@ Week 2 (ROS 2):
 - [x] M2.2 — ROS 2 Humble installed and verified (talker/listener,
       workspace, setup docs)
 - [x] M2.3 — first ROS 2 package `student_robotics` with `hello_node`
-- [ ] M2.4 — publisher/subscriber communication
+- [x] M2.4 — publisher/subscriber communication (1 Hz status topic,
+      CLI-verified with hz/echo)
 - [ ] M2.5 — reusable onboarding example
 
 ## Next Steps
 
-Publisher/subscriber nodes inside `student_robotics` (M2.4).
+Milestone 2.5: launch file, parameters, troubleshooting docs.

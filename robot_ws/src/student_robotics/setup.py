@@ -4,7 +4,7 @@ package_name = 'student_robotics'
 
 setup(
     name=package_name,
-    version='0.1.0',
+    version='0.2.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -25,6 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'hello_node = student_robotics.hello_node:main',
+            'status_publisher = student_robotics.status_publisher:main',
+            'status_subscriber = student_robotics.status_subscriber:main',
         ],
     },
 )
