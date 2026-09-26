@@ -74,16 +74,5 @@ Manual test procedures live in `tests/`:
 - `tests/test_system_info.md` — two manual tests for `system_info.py`
   (basic run, and the missing-argument error case)
 
-## Current Status
 
-Week 1 (in progress):
 
-- [x] Day 1 — environment setup, repository creation
-- [x] Day 2 — Git branch/PR workflow (`hello_robot.py`, PR #1 merged)
-- [x] Day 3 — `system_info.py` with argparse/logging (PR #2 merged)
-- [x] Day 4 — documentation pass
-- [ ] Day 5 — weekly report and demo
-
-## Next Steps
-
-Finish the weekly report and demo. Week 2 will introduce ROS 2.
