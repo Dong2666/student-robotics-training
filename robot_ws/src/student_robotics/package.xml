@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>student_robotics</name>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
   <description>Student robotics training package: first ROS 2 Python node for the Berkeley Humanoid Lite internship.</description>
   <maintainer email="don1379@outlook.com">don1379</maintainer>
   <license>MIT</license>
