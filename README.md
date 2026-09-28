@@ -156,8 +156,10 @@ Week 2 (ROS 2):
 - [x] M2.3 — first ROS 2 package `student_robotics` with `hello_node`
 - [x] M2.4 — publisher/subscriber communication (1 Hz status topic,
       CLI-verified with hz/echo)
-- [ ] M2.5 — reusable onboarding example (launch + parameter done;
-      docs and release test in progress)
+- [x] M2.5 — reusable onboarding example (launch + `rate` parameter,
+      troubleshooting docs, one-command verification; clean-clone
+      release test passed — see
+      [docs/clean_clone_verification_week2.md](docs/clean_clone_verification_week2.md))
 
 ## Next Steps
 
