@@ -12,10 +12,10 @@ project. It is written for my mentor and for future students.
 
 ## Repository Structure
 
-- `docs/` — documentation: setup guides, package structure, changelog,
-  and daily reports
+- `docs/` — documentation: setup guides, package structure, troubleshooting,
+  changelog, and daily reports
 - `robot_ws/` — ROS 2 workspace (`src/student_robotics` package)
-- `scripts/` — small Python utilities
+- `scripts/` — Python utilities and the ROS 2 verification script
 - `config/` — example configuration files
 - `tests/` — manual test procedures
 - `requirements.txt` — Python dependencies
@@ -118,6 +118,31 @@ ros2 topic echo /status    # message content
 
 Manual test procedures: [docs/ros2_communication_tests.md](docs/ros2_communication_tests.md).
 
+### One-Command Demo (launch)
+
+One terminal instead of two — the launch file starts publisher and
+subscriber together and wires the `rate` parameter:
+
+```bash
+ros2 launch student_robotics status_demo.launch.py          # 1 Hz
+ros2 launch student_robotics status_demo.launch.py rate:=2.0  # 2 Hz
+```
+
+Ctrl+C stops both nodes (the `process has died [exit code -2]` lines
+launch prints afterwards are the SIGINT report, not a crash — see
+[docs/ros2_troubleshooting.md](docs/ros2_troubleshooting.md)).
+
+### Automated Verification
+
+An end-to-end check builds the workspace, runs both nodes, measures the
+topic rate, and verifies clean shutdown:
+
+```bash
+bash scripts/verify_pubsub.sh
+```
+
+Prints `PASS`/`FAIL` per check and exits 0 only when all pass.
+
 ## Current Status
 
 Week 1 — complete (environment, Git/PR workflow, Python utilities,
@@ -131,8 +156,9 @@ Week 2 (ROS 2):
 - [x] M2.3 — first ROS 2 package `student_robotics` with `hello_node`
 - [x] M2.4 — publisher/subscriber communication (1 Hz status topic,
       CLI-verified with hz/echo)
-- [ ] M2.5 — reusable onboarding example
+- [ ] M2.5 — reusable onboarding example (launch + parameter done;
+      docs and release test in progress)
 
 ## Next Steps
 
-Milestone 2.5: launch file, parameters, troubleshooting docs.
+Week 2 wrap-up: weekly report and demo, then Week 3 (MuJoCo).
